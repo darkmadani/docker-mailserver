@@ -31,7 +31,7 @@ services:
       - mailserver-config:/tmp/docker-mailserver/
       - mailserver-certs:/etc/letsencrypt:ro
       - /etc/localtime:/etc/localtime:ro
-    restart: always
+    restart: no
     stop_grace_period: 1m
     healthcheck:
       test: "ss --listening --ipv4 --tcp | grep --silent ':smtp' || exit 1"
